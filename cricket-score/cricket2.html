@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="loc"></div>
+    <div id="loc1"></div>
+    <script>
+      var t1=document.getElementById("loc").innerHTML = localStorage.getItem("team1");
+      var t2=document.getElementById("loc1").innerHTML = localStorage.getItem("team2");
+      if(t1<t2){
+          alert("team2 wins")
+      }
+      else if(t1>t2){
+          alert("team1 wins")
+      }
+      else{
+          alert("draw")
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-xl-6">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">TEAM1</h5>
+                <p>SCORE</p>
+                <h1>PLAYER1</h1>
+                <p id="run11">RUNS</p>
+                <!-- <h1>PLAYER2</h1>
+                <P id="RUN12">RUNS</P>
+                <h1>PLAYER2</h1>
+                <P id="RUN13">RUNS</P>
+                <h1>PLAYER2</h1>
+                <P id="RUN14">RUNS</P>
+                <h1>PLAYER2</h1>
+                <P id="RUN15">RUNS</P> -->
+                <button id="butn" onclick="bat1()">total</button>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col-sm-12 col-xl-6">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">TEAM2</h5>
+                <p>SCORE</p>
+                <h1>PLAYER2</h1>
+                <p id="run21">RUNS</p>
+                <!-- <h1>PLAYER2</h1>
+                <p id="run22">RUNS</p>
+                <h1>PLAYER3</h1>
+                <p id="run23">RUNS</p>
+                <h1>PLAYER4</h1>
+                <p id="run24">RUNS</p>
+                <h1>PLAYER5</h1>
+                <p id="run25">RUNS</p> -->
+                <button id="btn" onclick="bat2()">total</button>
+              </div>
+            </div>
+        </div>
+        </div>
+        <button onclick="window.location.href='C:/Users/Admin/Desktop/zen/cricket2.html';"> result</button>
+      </div>
+
+      <script>
+        p1 = [];
+        p2 = [];
+        count = 0;
+        count1 = 0;
+
+        var bat1 = function() {
+          if (count >= 18) {
+            document.getElementById("btn").disabled = false;
+            return;
+          } else {
+            document.getElementById("btn").disabled = true;
+          }
+          var score = Math.floor(Math.random() * 7);
+          //console.log(score);
+          p1.push(score);
+          //console.log(p1);
+
+          var total = p1.reduce((x, y) => {
+            return x + y;
+          });
+          //console.log(total);
+          document.getElementById("run11").innerHTML = total;
+          count += 1;
+          console.log(p1);
+
+          window.localStorage.setItem("team1", total);
+        };
+
+        var bat2 = function() {
+          if (count1 >= 18) {
+            document.getElementById("butn").disabled = false;
+            return;
+          } else {
+            document.getElementById("butn").disabled = true;
+          }
+          var score2 = Math.floor(Math.random() * 7);
+          p2.push(score2);
+
+          var total1 = p2.reduce((u, v) => {
+            return u + v;
+          });
+
+          document.getElementById("run21").innerHTML = total1;
+          count1 += 1;
+
+          window.localStorage.setItem("team2", total1);
+        };
+      </script>
+    </div>
+  </body>
+</html>
